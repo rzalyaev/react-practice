@@ -7,6 +7,9 @@ type PropsType = {
 
 export const AccordionTitle = (props: PropsType) => {
     return(
-        <h3>Menu</h3>
+        <div>
+            <h3>{props.title}</h3>
+            <p>{props.collapsed && <i> collapsed</i>}</p>
+        </div>
     )
 }
