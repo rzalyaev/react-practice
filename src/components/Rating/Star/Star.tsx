@@ -1,7 +1,11 @@
 import React from "react";
 
-export const Star = () => {
+type PropsType = {
+    selected: boolean
+}
+
+export const Star = (props: PropsType) => {
     return(
-        <>star </>
+        <span>{props.selected ? <b>star</b> : <>star</>} </span>
     )
 }
