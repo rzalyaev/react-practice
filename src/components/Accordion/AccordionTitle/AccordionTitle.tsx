@@ -1,6 +1,11 @@
 import React from "react";
 
-export const AccordionTitle = () => {
+type PropsType = {
+    title: string
+    collapsed: boolean
+}
+
+export const AccordionTitle = (props: PropsType) => {
     return(
         <h3>Menu</h3>
     )
