@@ -10,8 +10,8 @@ type PropsType = {
 export const Accordion = (props: PropsType) => {
     return (
         <div>
-            <AccordionTitle/>
-            <AccordionBody/>
+            <AccordionTitle title={props.title} collapsed={props.collapsed}/>
+            {!props.collapsed && <AccordionBody/>}
         </div>
     )
 }
