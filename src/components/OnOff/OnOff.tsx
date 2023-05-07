@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import styles from "./OnOff.module.css";
 
 type PropsType = {
@@ -6,11 +6,19 @@ type PropsType = {
 }
 
 export const OnOff = (props: PropsType) => {
+    const [toggle, setToggle] = useState(props.isOn);
+
     return(
         <div className={styles.onOff}>
-            <div className={`${styles.on} ${!props.isOn && styles.inactive}`}>On</div>
-            <div className={`${styles.off} ${props.isOn && styles.inactive}`}>Off</div>
-            <div className={`${styles.indicator} ${props.isOn ? styles.indicatorOn : styles.indicatorOff}`}></div>
+            <div className={`${styles.on} ${!toggle && styles.inactive}`}
+                 onClick={() => {setToggle(true)}}>
+                On
+            </div>
+            <div className={`${styles.off} ${toggle && styles.inactive}`}
+                 onClick={() => {setToggle(false)}}>
+                Off
+            </div>
+            <div className={`${styles.indicator} ${toggle ? styles.indicatorOn : styles.indicatorOff}`}></div>
         </div>
     )
 }
