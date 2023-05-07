@@ -16,6 +16,10 @@
     border: 1px solid #5b5b5b;
 }
 
+.on:hover, .off:hover {
+    cursor: pointer;
+}
+
 .on {
     color: black;
     background-color: #0aff00;
