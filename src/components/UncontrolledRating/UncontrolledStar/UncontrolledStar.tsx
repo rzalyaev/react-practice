@@ -1,13 +1,18 @@
 import React from "react";
+import styles from "../../Rating/Star/Star.module.css";
 
 type PropsType = {
-    value: 1 | 2 | 3 | 4 | 5
     selected: boolean
-    onClickCallback: (value: number) => void
+    setRating: () => void
 }
 
 export const UncontrolledStar = (props: PropsType) => {
+    const onClickHandler = () => props.setRating()
+    const selectedStarClassName = `${styles.star} ${props.selected && styles.selectedStar}`
+
     return(
-        <span onClick={() => {props.onClickCallback(props.value)}}>{props.selected ? <b>star</b> : <>star</>} </span>
+        <span className={selectedStarClassName} onClick={onClickHandler}>
+            {props.selected ? <b>star</b> : "star"}
+        </span>
     )
 }
