@@ -7,16 +7,14 @@ type PropsType = {
 }
 
 export const UncontrolledAccordion = (props: PropsType) => {
-    const [collapsed, setCollapsed] = useState(false);
-
-    const setCollapsedCallback = () => {
-        setCollapsed(!collapsed);
-    }
+    const [collapsed, setCollapsed] = useState(false)
+    const setCollapsedHandler = () => setCollapsed(!collapsed)
 
     return (
         <div>
-            <UncontrolledAccordionTitle title={props.title} collapsed={collapsed}
-                                        onClickCallback={setCollapsedCallback}/>
+            <UncontrolledAccordionTitle title={props.title}
+                                        collapsed={collapsed}
+                                        setCollapsed={setCollapsedHandler}/>
             {!collapsed && <UncontrolledAccordionBody/>}
         </div>
     )
