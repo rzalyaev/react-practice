@@ -1,24 +1,34 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {AppTitle} from "./components/AppTitle/AppTitle";
-import {Rating} from './components/Rating/Rating';
 import {Accordion} from "./components/Accordion/Accordion";
-import {OnOff} from "./components/OnOff/OnOff";
 import {UncontrolledAccordion} from "./components/UncontrolledAccordion/UncontrolledAccordion";
+import {RatingType, Rating} from './components/Rating/Rating';
 import {UncontrolledRating} from "./components/UncontrolledRating/UncontrolledRating";
+import {OnOff} from "./components/OnOff/OnOff";
+import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 
 const App = () => {
+    const [switchState, setSwitchState] = useState<boolean>(false);
+
+    const [collapsed, setCollapsed] = useState<boolean>(false);
+    const setCollapsedCallback = () => setCollapsed(!collapsed)
+
+    const [rating, setRating] = useState<RatingType>(0);
+
     return (
         <div className="App">
             <AppTitle/>
-            {/*<Accordion title={'Menu'} collapsed={false}/>*/}
-            {/*<Accordion title={'Options'} collapsed={true}/>*/}
-            <UncontrolledAccordion title={'Menu'}/>
-            <UncontrolledAccordion title={'Options'}/>
-            {/*<Rating value={3}/>*/}
+            <Accordion title={'Controlled Accordion'}
+                       collapsed={collapsed}
+                       setCollapsed={setCollapsedCallback}/>
+            <UncontrolledAccordion title={'Uncontrolled Accordion'}/>
+            <Rating rating={rating}
+                    setRating={setRating}/>
             <UncontrolledRating/>
-            <OnOff isOn={true}/>
-            <OnOff isOn={false}/>
+            <OnOff switchState={switchState}
+                   setSwitchState={setSwitchState}/>
+            <UncontrolledOnOff/>
         </div>
     );
 }
