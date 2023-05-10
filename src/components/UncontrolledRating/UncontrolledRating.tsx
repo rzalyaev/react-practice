@@ -1,20 +1,18 @@
 import React, {useState} from "react";
 import {UncontrolledStar} from "./UncontrolledStar/UncontrolledStar";
+import {RatingType} from "../Rating/Rating";
 
 export const UncontrolledRating = () => {
-    const [rating, setRating] = useState(0);
-
-    const setRatingCallback = (value: number) => {
-        setRating(value)
-    }
+    const [rating, setRating] = useState<RatingType>(0);
 
     return(
         <div>
-            <UncontrolledStar value={1} selected={rating > 0} onClickCallback={setRatingCallback}/>
-            <UncontrolledStar value={2} selected={rating > 1} onClickCallback={setRatingCallback}/>
-            <UncontrolledStar value={3} selected={rating > 2} onClickCallback={setRatingCallback}/>
-            <UncontrolledStar value={4} selected={rating > 3} onClickCallback={setRatingCallback}/>
-            <UncontrolledStar value={5} selected={rating > 4} onClickCallback={setRatingCallback}/>
+            <h3>Uncontrolled Rating</h3>
+            <UncontrolledStar selected={rating > 0} setRating={() => setRating(1)}/>
+            <UncontrolledStar selected={rating > 1} setRating={() => setRating(2)}/>
+            <UncontrolledStar selected={rating > 2} setRating={() => setRating(3)}/>
+            <UncontrolledStar selected={rating > 3} setRating={() => setRating(4)}/>
+            <UncontrolledStar selected={rating > 4} setRating={() => setRating(5)}/>
         </div>
     )
 }
