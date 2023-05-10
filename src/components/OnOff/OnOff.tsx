@@ -1,24 +1,29 @@
-import React, {useState} from "react";
+import React from "react";
 import styles from "./OnOff.module.css";
 
 type PropsType = {
-    isOn: boolean
+    switchState: boolean
+    setSwitchState: (newSwitchState: boolean) => void
 }
 
 export const OnOff = (props: PropsType) => {
-    const [toggle, setToggle] = useState(props.isOn);
-
+    const turnOn = () => props.setSwitchState(true)
+    const turnOff = () => props.setSwitchState(false)
+    const onButtonClassName = `${styles.on} ${!props.switchState && styles.inactive}`
+    const offButtonClassName = `${styles.off} ${props.switchState && styles.inactive}`
+    const indicatorClassName = `${styles.indicator} ${props.switchState ? styles.indicatorOn : styles.indicatorOff}`
     return(
-        <div className={styles.onOff}>
-            <div className={`${styles.on} ${!toggle && styles.inactive}`}
-                 onClick={() => {setToggle(true)}}>
-                On
+        <div>
+            <h3>Controlled OnOff</h3>
+            <div className={styles.onOff}>
+                <div className={onButtonClassName} onClick={turnOn}>
+                    On
+                </div>
+                <div className={offButtonClassName} onClick={turnOff}>
+                    Off
+                </div>
+                <div className={indicatorClassName}></div>
             </div>
-            <div className={`${styles.off} ${toggle && styles.inactive}`}
-                 onClick={() => {setToggle(false)}}>
-                Off
-            </div>
-            <div className={`${styles.indicator} ${toggle ? styles.indicatorOn : styles.indicatorOff}`}></div>
         </div>
     )
 }
