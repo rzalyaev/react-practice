@@ -1,0 +1,12 @@
+.star {
+    box-sizing: border-box;
+    padding: 0 5px;
+    margin: 0 2px;
+    width: 50px;
+    border: 1px solid gold;
+    cursor: pointer;
+}
+
+.selectedStar {
+    background: gold;
+}
