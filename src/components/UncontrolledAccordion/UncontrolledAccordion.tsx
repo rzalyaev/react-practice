@@ -1,21 +1,24 @@
-import React, {useState} from "react";
+import React, {useReducer} from "react";
 import {UncontrolledAccordionTitle} from "./UncontrolledAccordionTitle/UncontrolledAccordionTitle";
 import {UncontrolledAccordionBody} from "./UncontrolledAccordionBody/UncontrolledAccordionBody";
+import {reducer, TOGGLE_COLLAPSED} from "./reducer";
 
 type PropsType = {
     title: string
 }
 
-export const UncontrolledAccordion = (props: PropsType) => {
-    const [collapsed, setCollapsed] = useState(false)
-    const setCollapsedHandler = () => setCollapsed(!collapsed)
+const UncontrolledAccordionComponent = (props: PropsType) => {
+    // const [collapsed, setCollapsed] = useState(false);
+    const [state, dispatch] = useReducer(reducer, {collapsed: false});
+
+    const setCollapsedHandler = () => dispatch({type: TOGGLE_COLLAPSED});
 
     return (
         <div>
             <UncontrolledAccordionTitle title={props.title}
-                                        collapsed={collapsed}
+                                        collapsed={state.collapsed}
                                         setCollapsed={setCollapsedHandler}/>
-            {!collapsed && <UncontrolledAccordionBody/>}
+            {!state.collapsed && <UncontrolledAccordionBody/>}
         </div>
     )
 }
