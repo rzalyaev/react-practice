@@ -11,11 +11,9 @@ import {ItemType, Select} from "./components/Select/Select";
 
 const App = () => {
     const [switchState, setSwitchState] = useState<boolean>(false);
-
+    const [rating, setRating] = useState<RatingType>(0);
     const [collapsed, setCollapsed] = useState<boolean>(false);
     const setCollapsedCallback = () => setCollapsed(!collapsed)
-
-    const [rating, setRating] = useState<RatingType>(0);
 
     const initialItems: ItemType[] = [
         {value: '1', title: 'Izhevsk'},
@@ -23,17 +21,19 @@ const App = () => {
         {value: '3', title: 'Kazan'},
     ]
     const [items, setItems] = useState<ItemType[]>(initialItems);
+
     const selectOnChange = (value: any) => {
 
     }
-
 
     return (
         <div className="App">
             <AppTitle/>
             <Accordion title={'Controlled Accordion'}
                        collapsed={collapsed}
-                       setCollapsed={setCollapsedCallback} items={initialItems} onClick={()=>{}}/>
+                       setCollapsed={setCollapsedCallback}
+                       items={initialItems}
+                       onClick={()=>{}}/>
             <UncontrolledAccordion title={'Uncontrolled Accordion'}/>
             <Rating rating={rating}
                     setRating={setRating}/>
