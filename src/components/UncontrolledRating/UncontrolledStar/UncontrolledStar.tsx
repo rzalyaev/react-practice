@@ -6,7 +6,7 @@ type PropsType = {
     setRating: () => void
 }
 
-export const UncontrolledStar = (props: PropsType) => {
+const UncontrolledStarComponent = (props: PropsType) => {
     const onClickHandler = () => props.setRating()
     const selectedStarClassName = `${styles.star} ${props.selected && styles.selectedStar}`
 
@@ -16,3 +16,5 @@ export const UncontrolledStar = (props: PropsType) => {
         </span>
     )
 }
+
+export const UncontrolledStar = React.memo(UncontrolledStarComponent);

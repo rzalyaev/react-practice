@@ -22,3 +22,5 @@ const UncontrolledAccordionComponent = (props: PropsType) => {
         </div>
     )
 }
+
+export const UncontrolledAccordion = React.memo(UncontrolledAccordionComponent);

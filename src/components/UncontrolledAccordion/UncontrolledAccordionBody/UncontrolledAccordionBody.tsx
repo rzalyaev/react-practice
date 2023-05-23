@@ -1,6 +1,6 @@
 import React from "react";
 
-export const UncontrolledAccordionBody = () => {
+const UncontrolledAccordionBodyComponent = () => {
     return(
         <ul>
             <li>1</li>
@@ -9,3 +9,5 @@ export const UncontrolledAccordionBody = () => {
         </ul>
     )
 }
+
+export const UncontrolledAccordionBody = React.memo(UncontrolledAccordionBodyComponent);

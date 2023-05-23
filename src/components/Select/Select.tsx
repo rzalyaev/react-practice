@@ -1,4 +1,5 @@
-import React, {FC, useState} from "react";
+import React, {FC, useState, KeyboardEvent} from "react";
+import styles from './Select.module.css';
 
 export type ItemType = {
     title: string,
@@ -11,7 +12,7 @@ type PropsType = {
     items: ItemType[]
 }
 
-export const Select: FC<PropsType> = ({value, onChange, items}) => {
+const SelectComponent: FC<PropsType> = ({value, onChange, items}) => {
     const [collapsed, setCollapsed] = useState<boolean>(true);
     const [hoveredElemValue, setHoveredElemValue] = useState(value || items[0].value);
     const collapseSelect = () => setCollapsed(!collapsed);
@@ -67,3 +68,5 @@ export const Select: FC<PropsType> = ({value, onChange, items}) => {
         </div>
     )
 }
+
+export const Select = React.memo(SelectComponent);

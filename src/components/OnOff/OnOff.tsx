@@ -6,7 +6,7 @@ type PropsType = {
     setSwitchState: (newSwitchState: boolean) => void
 }
 
-export const OnOff = (props: PropsType) => {
+const OnOffComponent = (props: PropsType) => {
     const turnOn = () => props.setSwitchState(true)
     const turnOff = () => props.setSwitchState(false)
     const onButtonClassName = `${styles.on} ${!props.switchState && styles.inactive}`
@@ -27,3 +27,5 @@ export const OnOff = (props: PropsType) => {
         </div>
     )
 }
+
+export const OnOff = React.memo(OnOffComponent);

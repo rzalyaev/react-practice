@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import styles from "../OnOff/OnOff.module.css";
 
-export const UncontrolledOnOff = () => {
+const UncontrolledOnOffComponent = () => {
     const [switchState, setSwitchState] = useState<boolean>(false);
 
     const turnOn = () => setSwitchState(true)
@@ -24,3 +24,5 @@ export const UncontrolledOnOff = () => {
         </div>
     )
 }
+
+export const UncontrolledOnOff = React.memo(UncontrolledOnOffComponent);

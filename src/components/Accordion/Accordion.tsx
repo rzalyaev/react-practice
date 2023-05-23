@@ -15,7 +15,7 @@ type PropsType = {
     onClick: (value: any) => void,
 }
 
-export const Accordion = (props: PropsType) => {
+const AccordionComponent = (props: PropsType) => {
     return (
         <div>
             <AccordionTitle title={props.title}
@@ -25,3 +25,5 @@ export const Accordion = (props: PropsType) => {
         </div>
     )
 }
+
+export const Accordion = React.memo(AccordionComponent);

@@ -7,7 +7,7 @@ type PropsType = {
     setCollapsed: () => void
 }
 
-export const AccordionTitle = (props: PropsType) => {
+const AccordionTitleComponent = (props: PropsType) => {
     const changeCollapsedState = () => props.setCollapsed()
 
     return(
@@ -18,3 +18,5 @@ export const AccordionTitle = (props: PropsType) => {
         </div>
     )
 }
+
+export const AccordionTitle = React.memo(AccordionTitleComponent);

@@ -7,7 +7,7 @@ type PropsType = {
     setCollapsed: () => void
 }
 
-export const UncontrolledAccordionTitle = (props: PropsType) => {
+const UncontrolledAccordionTitleComponent = (props: PropsType) => {
     const changeCollapsedState = () => props.setCollapsed()
 
     return(
@@ -18,3 +18,5 @@ export const UncontrolledAccordionTitle = (props: PropsType) => {
         </div>
     )
 }
+
+export const UncontrolledAccordionTitle = React.memo(UncontrolledAccordionTitleComponent);

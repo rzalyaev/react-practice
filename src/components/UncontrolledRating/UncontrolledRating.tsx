@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import {UncontrolledStar} from "./UncontrolledStar/UncontrolledStar";
 import {RatingType} from "../Rating/Rating";
 
-export const UncontrolledRating = () => {
+const UncontrolledRatingComponent = () => {
     const [rating, setRating] = useState<RatingType>(0);
 
     return(
@@ -16,3 +16,5 @@ export const UncontrolledRating = () => {
         </div>
     )
 }
+
+export const UncontrolledRating = React.memo(UncontrolledRatingComponent);

@@ -8,7 +8,7 @@ type PropsType = {
     setRating: (newRatingValue: RatingType) => void
 }
 
-export const Rating = (props: PropsType) => {
+const RatingComponent = (props: PropsType) => {
     return(
         <div>
             <h3>Controlled Rating</h3>
@@ -20,3 +20,5 @@ export const Rating = (props: PropsType) => {
         </div>
     )
 }
+
+export const Rating = React.memo(RatingComponent);
