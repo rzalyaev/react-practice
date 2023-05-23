@@ -42,7 +42,9 @@ const App = () => {
             <OnOff switchState={switchState}
                    setSwitchState={setSwitchState}/>
             <UncontrolledOnOff/>
-            <Select value={'1'} onChange={selectOnChange} items={items}/>
+            <Select value={value}
+                    onChange={selectOnChange}
+                    items={items}/>
         </div>
     );
 }
