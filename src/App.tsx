@@ -13,6 +13,7 @@ const App = () => {
     const [switchState, setSwitchState] = useState<boolean>(false);
     const [rating, setRating] = useState<RatingType>(0);
     const [collapsed, setCollapsed] = useState<boolean>(false);
+    const [value, setValue] = useState<string>('1');
     const setCollapsedCallback = () => setCollapsed(!collapsed)
 
     const initialItems: ItemType[] = [
