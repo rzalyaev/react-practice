@@ -24,7 +24,7 @@ const App = () => {
     const [items, setItems] = useState<ItemType[]>(initialItems);
 
     const selectOnChange = (value: any) => {
-
+        setValue(value);
     }
 
     return (
