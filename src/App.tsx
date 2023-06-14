@@ -9,6 +9,7 @@ import {OnOff} from "./components/OnOff/OnOff";
 import {UncontrolledOnOff} from "./components/UncontrolledOnOff/UncontrolledOnOff";
 import {ItemType, Select} from "./components/Select/Select";
 import {Clock} from "./components/Clock/Clock";
+import AnalogClock from "./components/Clock/AnalogClock/AnalogClock";
 
 const App = () => {
     const [switchState, setSwitchState] = useState<boolean>(false);
@@ -30,7 +31,8 @@ const App = () => {
 
     return (
         <div className="App">
-            <Clock/>
+            <Clock clockType={'analog'}/>
+            <Clock clockType={'digital'}/>
             <AppTitle/>
             <Accordion title={'Controlled Accordion'}
                        collapsed={collapsed}
