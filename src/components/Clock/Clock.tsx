@@ -1,17 +1,13 @@
-import React, {useEffect, useState} from "react";
+import React from "react";
+import DigitalClock from "./DigitalClock/DigitalClock";
+import AnalogClock from "./AnalogClock/AnalogClock";
 
-export const Clock = () => {
-    const [date, setDate] = useState<Date>(new Date());
+type ClockPropsType = {
+    clockType: 'digital' | 'analog'
+}
 
-    useEffect(() => {
-        const intervalId = window.setInterval(() => {
-            setDate(new Date());
-        }, 1000);
-
-        return () => clearInterval(intervalId);
-    }, []);
-
+export const Clock = ({clockType}: ClockPropsType) => {
     return (
-        <time>{date.toLocaleTimeString("ru")}</time>
+        clockType === 'digital' ? <DigitalClock/> : <AnalogClock/>
     );
 }
