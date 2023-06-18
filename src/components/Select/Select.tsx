@@ -2,6 +2,7 @@ import React, {FC, useState, KeyboardEvent} from "react";
 import styles from './Select.module.css';
 
 export type ItemType = {
+    countryId?: number,
     title: string,
     value: any,
 }
