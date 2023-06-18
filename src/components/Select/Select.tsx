@@ -45,7 +45,13 @@ const SelectComponent: FC<PropsType> = ({value, onChange, items}) => {
 
     return(
         <div className={styles.container}>
-            <div className={styles.select} onKeyDown={onKeyDown} onClick={collapseSelect} tabIndex={0}>{selectedItem?.title || items[0].title}</div>
+            <div className={styles.select}
+                 onKeyDown={onKeyDown}
+                 onClick={collapseSelect}
+                 tabIndex={0}
+            >
+                {selectedItem?.title || items[0].title}
+            </div>
             <div className={styles.optionsContainer}>
                 {!collapsed && items.map((item, index) => {
                         const chooseOption = () => {
