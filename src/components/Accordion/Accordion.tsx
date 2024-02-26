@@ -10,7 +10,7 @@ export const Accordion = (props: AccordionPropsType) => {
   return (
       <div>
         <AccordionTitle title={props.titleValue}/>
-        {props.collapsed ? <i>accordion is collapsed</i> : <AccordionBody/>}
+        {!props.collapsed && <AccordionBody/>}
       </div>
   )
 }
