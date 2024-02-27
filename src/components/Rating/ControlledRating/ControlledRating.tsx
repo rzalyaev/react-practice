@@ -1,11 +1,11 @@
 import React from "react";
 
-type RatingPropsType = {
+type ControlledRatingPropsType = {
   value: 0 | 1 | 2 | 3 | 4 | 5
 }
 
-export const Rating = (props: RatingPropsType) => {
-  console.log('Rating is rendering');
+export const ControlledRating = (props: ControlledRatingPropsType) => {
+  console.log('ControlledRating is rendering');
   return (
       <div>
         <Star selected={props.value >= 1}/>
