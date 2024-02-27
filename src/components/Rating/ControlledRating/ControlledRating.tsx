@@ -1,4 +1,5 @@
 import React from "react";
+import {Star} from "../Star/Star";
 
 type ControlledRatingPropsType = {
   value: 0 | 1 | 2 | 3 | 4 | 5
@@ -18,18 +19,4 @@ export const ControlledRating = (props: ControlledRatingPropsType) => {
         </div>
       </>
   )
-}
-
-type StarPropsType = {
-  selected: boolean
-}
-
-const Star = (props: StarPropsType) => {
-  console.log('Star is rendering');
-
-  if (props.selected) {
-    return <span><b>star</b> </span>
-  } else {
-    return <span>star </span>
-  }
 }
