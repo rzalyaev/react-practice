@@ -1,0 +1,33 @@
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    padding: 5px;
+}
+
+.onButton, .offButton {
+    width: 30px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 10%;
+    padding: 2px;
+    cursor: pointer;
+}
+
+.isOn {
+    background-color: lightgreen;
+}
+
+.isOff {
+    color: white;
+    background-color: #a84040;
+}
+
+.indicator {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 50%;
+    padding: 2px;
+}
