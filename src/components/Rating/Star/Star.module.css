@@ -1,0 +1,9 @@
+.starButton {
+    margin: 2px;
+    cursor: pointer;
+    box-sizing: border-box;
+}
+
+.selected {
+    background-color: lightgreen;
+}
