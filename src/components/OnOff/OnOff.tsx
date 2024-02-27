@@ -12,10 +12,13 @@ export const OnOff = () => {
   const indicatorClass = `${styles.indicator} ${isOn ? styles.isOn : styles.isOff}`;
 
   return (
-      <div className={styles.wrapper}>
-        <button className={onButtonClass} onClick={turnOn}>On</button>
-        <button className={offButtonClass} onClick={turnOff}>Off</button>
-        <div className={indicatorClass}></div>
-      </div>
+      <>
+        <h3>On-off switcher</h3>
+        <div className={styles.wrapper}>
+          <button className={onButtonClass} onClick={turnOn}>On</button>
+          <button className={offButtonClass} onClick={turnOff}>Off</button>
+          <div className={indicatorClass}></div>
+        </div>
+      </>
   );
 };
