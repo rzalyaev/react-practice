@@ -6,14 +6,6 @@ type RatingType = 0 | 1 | 2 | 3 | 4 | 5
 export const UncontrolledRating = () => {
   const [rating, setRating] = useState<RatingType>(0);
 
-  const oneStarHandler = () => {
-    if (rating === 1) {
-      setRating(0);
-    } else {
-      setRating(1);
-    }
-  }
-
   return (
       <>
         <h3>Uncontrolled rating (rating can be changed)</h3>
