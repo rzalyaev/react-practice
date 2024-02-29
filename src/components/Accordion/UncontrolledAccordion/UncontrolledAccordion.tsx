@@ -17,6 +17,7 @@ export const UncontrolledAccordion = (props: UncontrolledAccordionPropsType) => 
   )
 }
 
+// Title ---------------------------------------------------------------------------------------------------------------
 type UncontrolledAccordionTitlePropsType = {
   title: string
   changeCollapsedState: () => void
@@ -25,10 +26,12 @@ type UncontrolledAccordionTitlePropsType = {
 const UncontrolledAccordionTitle = ({title, changeCollapsedState}: UncontrolledAccordionTitlePropsType) => {
   console.log('UncontrolledAccordionTitle is rendering');
   return (
-      <h3 onClick={changeCollapsedState}>{title}</h3>
+      <h3 style={{cursor: 'pointer'}} onClick={changeCollapsedState}>{title}</h3>
   )
 }
 
+
+// Body ----------------------------------------------------------------------------------------------------------------
 type UncontrolledAccordionBodyPropsType = {
   collapsed: boolean
 }
@@ -39,10 +42,10 @@ const UncontrolledAccordionBody = ({collapsed}: UncontrolledAccordionBodyPropsTy
     return <></>;
   }
   return (
-    <ul>
-      <li>1</li>
-      <li>2</li>
-      <li>3</li>
-    </ul>
+      <ul>
+        <li>List item 1</li>
+        <li>List item 2</li>
+        <li>List item 3</li>
+      </ul>
   )
 }
