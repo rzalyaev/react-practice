@@ -1,21 +1,40 @@
-import React from 'react';
+import React, {useState} from 'react';
 import './App.css';
 import {ControlledAccordion} from "./components/Accordion/ControlledAccordion/ControlledAccordion";
 import {UncontrolledAccordion} from "./components/Accordion/UncontrolledAccordion/UncontrolledAccordion";
 import {ControlledRating} from "./components/Rating/ControlledRating/ControlledRating";
 import {UncontrolledRating} from "./components/Rating/UncontrolledRating/UncontrolledRating";
-import {OnOff} from "./components/OnOff/OnOff";
+import {UncontrolledOnOff} from "./components/OnOff/UncontrolledOnOff/UncontrolledOnOff";
+import {ControlledOnOff} from "./components/OnOff/ControlledOnOff/ControlledOnOff";
+
+export type RatingType = 0 | 1 | 2 | 3 | 4 | 5
 
 function App() {
-  console.log('App is rendering');
+  // Controlled rating functionality -----------------------------------------------------------------------------------
+  const [rating, setRating] = useState<RatingType>(0);
+  const changeRating = (newRating: RatingType) => setRating(newRating);
+
+  // Controlled accordion functionality --------------------------------------------------------------------------------
+  const [collapsed, setCollapsed] = useState<boolean>(false);
+  const changeCollapsedState = () => setCollapsed(!collapsed);
+
+  // Controlled OnOff functionality ------------------------------------------------------------------------------------
+  const [isOn, setIsOn] = useState(false);
+
+  const turnOn = () => setIsOn(true);
+  const turnOff = () => setIsOn(false);
+
   return (
       <div className="App">
         <PageTitle title={'React practice'}/>
-        <ControlledAccordion titleValue={'Controlled accordion (click does not work)'} collapsed={false}/>
-        <UncontrolledAccordion titleValue={"Uncontrolled accordion (click to collapse/expand)"}/>
-        <ControlledRating value={3}/>
+        <ControlledAccordion titleValue={'Controlled accordion. Statement is managed from outside of a component'}
+                             collapsed={collapsed} changeCollapsedState={changeCollapsedState}
+        />
+        <UncontrolledAccordion titleValue={`Uncontrolled accordion. Statement is managed from inside of a component`}/>
+        <ControlledRating value={rating} changeRating={changeRating}/>
         <UncontrolledRating/>
-        <OnOff/>
+        <ControlledOnOff isOn={isOn} turnOn={turnOn} turnOff={turnOff}/>
+        <UncontrolledOnOff/>
       </div>
   );
 }
@@ -25,7 +44,6 @@ type PageTitlePropsType = {
 }
 
 const PageTitle = (props: PageTitlePropsType) => {
-  console.log('AppTitle is rendering');
   return (
       <h1>{props.title}</h1>
   )
