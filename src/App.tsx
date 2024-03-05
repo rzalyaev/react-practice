@@ -28,7 +28,7 @@ function App() {
       <div className="App">
         <PageTitle title={'React practice'}/>
         <ControlledAccordion titleValue={'Controlled accordion. Statement is managed from outside of a component'}
-                             collapsed={collapsed} changeCollapsedState={changeCollapsedState}
+                             collapsed={collapsed} onChange={changeCollapsedState}
         />
         <UncontrolledAccordion titleValue={`Uncontrolled accordion. Statement is managed from inside of a component`}/>
         <ControlledRating value={rating} changeRating={changeRating}/>
