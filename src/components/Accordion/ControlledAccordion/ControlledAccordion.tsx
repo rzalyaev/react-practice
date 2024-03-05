@@ -3,13 +3,13 @@ import React from "react";
 type ControlledAccordionPropsType = {
   titleValue: string
   collapsed: boolean
-  changeCollapsedState: () => void
+  onChange: () => void
 }
 
-export const ControlledAccordion = ({titleValue, collapsed, changeCollapsedState}: ControlledAccordionPropsType) => {
+export const ControlledAccordion = ({titleValue, collapsed, onChange}: ControlledAccordionPropsType) => {
   return (
       <div>
-        <ControlledAccordionTitle title={titleValue} changeCollapsedState={changeCollapsedState}/>
+        <ControlledAccordionTitle title={titleValue} onChange={onChange}/>
         {!collapsed && <ControlledAccordionBody/>}
       </div>
   )
@@ -17,12 +17,12 @@ export const ControlledAccordion = ({titleValue, collapsed, changeCollapsedState
 
 type ControlledAccordionTitlePropsType = {
   title: string
-  changeCollapsedState: () => void
+  onChange: () => void
 }
 
-const ControlledAccordionTitle = ({title, changeCollapsedState}: ControlledAccordionTitlePropsType) => {
+const ControlledAccordionTitle = ({title, onChange}: ControlledAccordionTitlePropsType) => {
   return (
-      <h3 style={{cursor: 'pointer'}} onClick={changeCollapsedState}>{title}</h3>
+      <h3 style={{cursor: 'pointer'}} onClick={(event) => onChange()}>{title}</h3>
   )
 }
 
