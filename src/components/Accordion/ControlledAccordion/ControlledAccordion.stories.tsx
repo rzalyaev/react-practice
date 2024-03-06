@@ -1,4 +1,5 @@
 import type {Meta, StoryObj} from '@storybook/react';
+import { action } from '@storybook/addon-actions';
 
 import { ControlledAccordion } from './ControlledAccordion';
 import {useState} from "react";
@@ -18,7 +19,7 @@ export const FirstStory: Story = {
 }
 
 export const Collapsed = () => {
-  return <ControlledAccordion titleValue={'Collapsed Accordion'} collapsed={true} onChange={() => {}}/>
+  return <ControlledAccordion titleValue={'Collapsed Accordion'} collapsed={true} onChange={action('onClick')}/>
 }
 
 export const Expanded = () => {
