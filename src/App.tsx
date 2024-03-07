@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import './App.css';
-import {ControlledAccordion} from "./components/Accordion/ControlledAccordion/ControlledAccordion";
+import {ControlledAccordion, ItemType} from "./components/Accordion/ControlledAccordion/ControlledAccordion";
 import {UncontrolledAccordion} from "./components/Accordion/UncontrolledAccordion/UncontrolledAccordion";
 import {ControlledRating} from "./components/Rating/ControlledRating/ControlledRating";
 import {UncontrolledRating} from "./components/Rating/UncontrolledRating/UncontrolledRating";
 import {UncontrolledOnOff} from "./components/OnOff/UncontrolledOnOff/UncontrolledOnOff";
 import {ControlledOnOff} from "./components/OnOff/ControlledOnOff/ControlledOnOff";
+import {Select} from "./components/Select/Select";
 
 export type RatingType = 0 | 1 | 2 | 3 | 4 | 5
 
@@ -15,8 +16,14 @@ function App() {
   const changeRating = (newRating: RatingType) => setRating(newRating);
 
   // Controlled accordion functionality --------------------------------------------------------------------------------
+  const controlledAccordionItems: ItemType[] = [
+    {title: 'List Item 1', value: 1},
+    {title: 'List Item 2', value: 2},
+    {title: 'List Item 3', value: 3}
+  ]
   const [collapsed, setCollapsed] = useState<boolean>(false);
   const changeCollapsedState = () => setCollapsed(!collapsed);
+  const handleItemOnClick = (value: any) => {}
 
   // Controlled OnOff functionality ------------------------------------------------------------------------------------
   const [isOn, setIsOn] = useState(false);
@@ -28,7 +35,10 @@ function App() {
       <div className="App">
         <PageTitle title={'React practice'}/>
         <ControlledAccordion titleValue={'Controlled accordion. Statement is managed from outside of a component'}
-                             collapsed={collapsed} onChange={changeCollapsedState}
+                             collapsed={collapsed}
+                             onChange={changeCollapsedState}
+                             onClick={handleItemOnClick}
+                             items={controlledAccordionItems}
         />
         <UncontrolledAccordion titleValue={`Uncontrolled accordion. Statement is managed from inside of a component`}/>
         <ControlledRating value={rating} changeRating={changeRating}/>
