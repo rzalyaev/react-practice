@@ -31,6 +31,15 @@ function App() {
   const turnOn = () => setIsOn(true);
   const turnOff = () => setIsOn(false);
 
+  // Select component functionality ------------------------------------------------------------------------------------
+  const itemsToSelect: ItemType[] = [
+    {title: 'Moscow', value: 1},
+    {title: 'Kazan', value: 2},
+    {title: 'Izhevsk', value: 3}
+  ]
+  const [currentValue, setCurrentValue] = useState<any>('none');
+  const changeCurrentValue = (value: any) => setCurrentValue(value);
+
   return (
       <div className="App">
         <PageTitle title={'React practice'}/>
@@ -45,6 +54,7 @@ function App() {
         <UncontrolledRating/>
         <ControlledOnOff isOn={isOn} turnOn={turnOn} turnOff={turnOff}/>
         <UncontrolledOnOff/>
+        <Select value={currentValue} onChange={changeCurrentValue} items={itemsToSelect}/>
       </div>
   );
 }
