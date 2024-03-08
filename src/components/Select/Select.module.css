@@ -1,4 +1,40 @@
+.wrapper {
+    margin: 0 auto;
+    width: 100px;
+}
+
 .selected {
     border: 1px solid black;
     border-radius: 5px;
+    padding: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.expanded {
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+
+.selected > img {
+    width: 15px;
+    height: 15px;
+}
+
+.itemToSelect {
+    border: 1px solid black;
+    border-top: none;
+    cursor: pointer;
+}
+
+.itemToSelect:last-of-type {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.itemToSelect:hover {
+    background-color: rgba(196, 196, 196, 0.35);
 }
