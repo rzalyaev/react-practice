@@ -8,4 +8,8 @@ const meta: Meta<typeof Select> = {
 
 export default meta;
 
-export const BasicSelect = () => <input/>;
+export const CollapsedSelect = () => {
+  return (
+      <Select value={'1'} onChange={action('')} items={[]}/>
+  )
+};
