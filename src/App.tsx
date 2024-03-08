@@ -33,12 +33,13 @@ function App() {
 
   // Select component functionality ------------------------------------------------------------------------------------
   const itemsToSelect: ItemType[] = [
-    {title: 'Moscow', value: 1},
-    {title: 'Kazan', value: 2},
-    {title: 'Izhevsk', value: 3}
+    {value: '1', title: 'Moscow'},
+    {value: '2', title: 'Kazan'},
+    {value: '3', title: 'Izhevsk'}
   ]
-  const [currentValue, setCurrentValue] = useState<any>('none');
-  const changeCurrentValue = (value: any) => setCurrentValue(value);
+  const [currentValue, setCurrentValue] =
+      useState<string | undefined>(undefined);
+  const changeCurrentValue = (value: string) => setCurrentValue(value);
 
   return (
       <div className="App">
