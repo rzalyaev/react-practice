@@ -1,17 +1,17 @@
 .wrapper {
     margin: 0 auto;
     width: 100px;
+    cursor: default;
 }
 
 .selected {
     border: 1px solid black;
-    border-radius: 5px;
-    padding: 3px;
+    border-radius: 3px;
+    padding: 0 3px;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 5px;
-    cursor: pointer;
 }
 
 .expanded {
@@ -27,14 +27,14 @@
 .itemToSelect {
     border: 1px solid black;
     border-top: none;
-    cursor: pointer;
 }
 
 .itemToSelect:last-of-type {
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 3px;
+    border-bottom-right-radius: 3px;
 }
 
-.itemToSelect:hover {
-    background-color: rgba(196, 196, 196, 0.35);
+.selectedItem {
+    color: white;
+    background-color: #1966d0;
 }
