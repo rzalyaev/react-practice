@@ -1,9 +1,9 @@
 import React, {useState, memo} from "react";
 import type {Meta} from "@storybook/react";
-import {Input} from "../components/Input/Input";
+import {EmptyComponent} from "../components/_sample/EmptyComponent";
 
-const meta: Meta<typeof Input> = {
-  component: Input,
+const meta: Meta<typeof EmptyComponent> = {
+  component: EmptyComponent,
 };
 
 export default meta;
