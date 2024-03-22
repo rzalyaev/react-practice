@@ -67,6 +67,9 @@ function App() {
         <ControlledOnOff isOn={isOn} turnOn={turnOn} turnOff={turnOff}/>
         <UncontrolledOnOff/>
         <Select value={currentValue} onChange={changeCurrentValue} items={itemsToSelect}/>
+        <DigitalClock/>
+        <AnalogClock/>
+        <Clock value={time}/>
       </div>
   );
 }
