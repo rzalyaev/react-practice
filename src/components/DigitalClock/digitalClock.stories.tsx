@@ -27,4 +27,6 @@ export const DigitalClockFromMomentModule = () => {
         {time}
       </div>
   )
-}
+};
+
+export const DigitalClockFromComponent = () => <DigitalClock/>
