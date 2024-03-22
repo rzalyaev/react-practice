@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from "react";
 import type {Meta} from "@storybook/react";
-import {EmptyComponent} from "../components/_sample/EmptyComponent";
+import {EmptyComponent} from "../_sample/EmptyComponent";
 import moment from "moment";
+import {DigitalClock} from "./DigitalClock";
 
 const meta: Meta<typeof EmptyComponent> = {
   component: EmptyComponent,
