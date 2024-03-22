@@ -13,9 +13,12 @@ export const Clock = () => {
   const [time, setTime] = useState(moment().format("hh:mm:ss"));
 
   useEffect(() => {
-    setInterval(() => {
+    const intervalId = setInterval(() => {
       setTime(moment().format("hh:mm:ss"));
     }, 1000)
+    return () => {
+      clearInterval(intervalId);
+    }
   }, []);
 
   return (
