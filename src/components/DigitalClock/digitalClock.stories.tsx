@@ -8,8 +8,8 @@ const meta: Meta<typeof EmptyComponent> = {
 };
 export default meta;
 
-export const Clock = () => {
-  console.log('Clock');
+export const DigitalClockFromMomentModule = () => {
+  console.log('DigitalClock from moment module');
   const [time, setTime] = useState(moment().format("hh:mm:ss"));
 
   useEffect(() => {
@@ -22,8 +22,8 @@ export const Clock = () => {
   }, []);
 
   return (
-      <>
-        Time: {time}
-      </>
+      <div>
+        {time}
+      </div>
   )
 }
