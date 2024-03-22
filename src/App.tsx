@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import './App.css';
 import {ControlledAccordion, ItemType} from "./components/Accordion/ControlledAccordion/ControlledAccordion";
 import {UncontrolledAccordion} from "./components/Accordion/UncontrolledAccordion/UncontrolledAccordion";
@@ -7,6 +7,10 @@ import {UncontrolledRating} from "./components/Rating/UncontrolledRating/Uncontr
 import {UncontrolledOnOff} from "./components/OnOff/UncontrolledOnOff/UncontrolledOnOff";
 import {ControlledOnOff} from "./components/OnOff/ControlledOnOff/ControlledOnOff";
 import {Select} from "./components/Select/Select";
+import {DigitalClock} from "./components/DigitalClock/DigitalClock";
+import AnalogClock from "./components/AnalogClock/AnalogClock";
+import {Clock} from 'react-clock';
+import 'react-clock/dist/Clock.css';
 
 export type RatingType = 0 | 1 | 2 | 3 | 4 | 5
 
