@@ -45,6 +45,13 @@ function App() {
       useState<string | undefined>(undefined);
   const changeCurrentValue = (value: string) => setCurrentValue(value);
 
+  // Clock component functionality
+  const [time, setTime] = useState(new Date());
+  useEffect(() => {
+    const interval = setInterval(() => setTime(new Date()), 1000);
+    return () => clearInterval(interval);
+  }, []);
+
   return (
       <div className="App">
         <PageTitle title={'React practice'}/>
